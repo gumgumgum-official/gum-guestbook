@@ -52,7 +52,7 @@ function Home() {
 
             <GuestbookForm />
 
-            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+            <div className="mt-5 space-y-3">
               {entries.map((e, i) => (
                 <GuestbookEntry key={i} {...e} />
               ))}
