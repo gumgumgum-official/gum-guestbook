@@ -51,7 +51,7 @@ function Guestbook() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="max-h-[520px] space-y-4 overflow-y-auto pr-2">
           {entries.map((e, i) => (
             <GuestbookEntry key={i} {...e} />
           ))}
