@@ -21,10 +21,30 @@ export const Route = createFileRoute("/")({
 });
 
 const entries = [
-  { name: "또또", date: "2026.05.12", message: "삐삐야~ 오늘도 놀러왔어! 방 너무 귀여워 ♥", rotate: -1 },
-  { name: "민지", date: "2026.05.11", message: "픽셀 음악 너무 좋다… 플레이리스트 공유 가능?", rotate: 1 },
-  { name: "초코", date: "2026.05.10", message: "오늘의 한마디 보고 위로 받고 가요. 고마워요 :)", rotate: -1 },
-  { name: "루루", date: "2026.05.08", message: "교환일기 페이지도 빨리 열어줘~ 기다리는중!", rotate: 1 },
+  {
+    name: "또또",
+    date: "2026.05.12",
+    message: "삐삐야~ 오늘도 놀러왔어! 방 너무 귀여워 ♥",
+    rotate: -1,
+  },
+  {
+    name: "민지",
+    date: "2026.05.11",
+    message: "픽셀 음악 너무 좋다… 플레이리스트 공유 가능?",
+    rotate: 1,
+  },
+  {
+    name: "초코",
+    date: "2026.05.10",
+    message: "오늘의 한마디 보고 위로 받고 가요. 고마워요 :)",
+    rotate: -1,
+  },
+  {
+    name: "루루",
+    date: "2026.05.08",
+    message: "교환일기 페이지도 빨리 열어줘~ 기다리는중!",
+    rotate: 1,
+  },
 ];
 
 function Home() {
