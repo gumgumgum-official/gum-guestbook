@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import BrowserFrame from "@/components/BrowserFrame";
 import PixelNav from "@/components/PixelNav";
-import PinkBanner from "@/components/PinkBanner";
 import ProfileCard from "@/components/home/ProfileCard";
 import TodayCard from "@/components/home/TodayCard";
 import MusicPlayer from "@/components/home/MusicPlayer";
@@ -9,14 +8,6 @@ import GuestbookForm from "@/components/guestbook/GuestbookForm";
 import GuestbookEntry from "@/components/guestbook/GuestbookEntry";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "삐삐홈 — 픽셀 미니홈피" },
-      { name: "description", content: "픽셀 감성 Y2K 미니 홈페이지. 삐삐의 작은 방에 놀러오세요." },
-      { property: "og:title", content: "삐삐홈 — 픽셀 미니홈피" },
-      { property: "og:description", content: "픽셀 감성 Y2K 미니 홈페이지." },
-    ],
-  }),
   component: Home,
 });
 
@@ -81,7 +72,7 @@ function Home() {
         </div>
       </div>
 
-      <PinkBanner>오늘도 놀러와줘서 고마워요. 좋은 하루 보내세요!</PinkBanner>
+      {/* <PinkBanner>오늘도 놀러와줘서 고마워요. 좋은 하루 보내세요!</PinkBanner> */}
     </BrowserFrame>
   );
 }

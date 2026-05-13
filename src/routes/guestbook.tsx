@@ -6,14 +6,6 @@ import GuestbookForm from "@/components/guestbook/GuestbookForm";
 import GuestbookEntry from "@/components/guestbook/GuestbookEntry";
 
 export const Route = createFileRoute("/guestbook")({
-  head: () => ({
-    meta: [
-      { title: "방명록 — 삐삐홈" },
-      { name: "description", content: "삐삐홈 방명록. 짧은 인사를 남겨주세요." },
-      { property: "og:title", content: "방명록 — 삐삐홈" },
-      { property: "og:description", content: "삐삐에게 한마디 ♥" },
-    ],
-  }),
   component: Guestbook,
 });
 
