@@ -2,11 +2,11 @@ import { createFileRoute } from "@tanstack/react-router";
 import BrowserFrame from "@/components/BrowserFrame";
 import PixelNav from "@/components/PixelNav";
 import PinkBanner from "@/components/PinkBanner";
-import NoteCard from "@/components/NoteCard";
 import ProfileCard from "@/components/home/ProfileCard";
 import TodayCard from "@/components/home/TodayCard";
 import MusicPlayer from "@/components/home/MusicPlayer";
-import PixelRoom from "@/components/home/PixelRoom";
+import GuestbookForm from "@/components/guestbook/GuestbookForm";
+import GuestbookEntry from "@/components/guestbook/GuestbookEntry";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -19,6 +19,13 @@ export const Route = createFileRoute("/")({
   }),
   component: Home,
 });
+
+const entries = [
+  { name: "또또", date: "2026.05.12", message: "삐삐야~ 오늘도 놀러왔어! 방 너무 귀여워 ♥", rotate: -1 },
+  { name: "민지", date: "2026.05.11", message: "픽셀 음악 너무 좋다… 플레이리스트 공유 가능?", rotate: 1 },
+  { name: "초코", date: "2026.05.10", message: "오늘의 한마디 보고 위로 받고 가요. 고마워요 :)", rotate: -1 },
+  { name: "루루", date: "2026.05.08", message: "교환일기 페이지도 빨리 열어줘~ 기다리는중!", rotate: 1 },
+];
 
 function Home() {
   return (
@@ -35,30 +42,21 @@ function Home() {
 
         {/* Right column */}
         <div className="space-y-4">
-          <PixelRoom />
+          <div className="pixel-card p-4 sm:p-6">
+            <div className="mb-4 flex items-end justify-between border-b-2 border-dashed border-[var(--pink-deep)] pb-2">
+              <h2 className="text-lg font-bold text-[var(--pink-deep)]">✎ 방명록</h2>
+              <span className="text-[11px] text-[var(--muted-foreground)]">
+                총 <b className="text-[var(--pink-deep)]">{entries.length}</b>개의 메시지
+              </span>
+            </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <NoteCard rotate={-2}>
-              <div className="text-[11px] font-bold text-[var(--pink-deep)]">★ 이 이야기의 주인공</div>
-              <p className="mt-1 text-xs">
-                삐삐는 픽셀 마을에 사는 작은 친구예요. 책과 노을과 따뜻한 코코아를 좋아합니다.
-              </p>
-            </NoteCard>
-            <NoteCard rotate={2}>
-              <div className="text-[11px] font-bold text-[var(--pink-deep)]">★ 오늘의 속마음</div>
-              <p className="mt-1 text-xs">
-                "조금 느려도 괜찮아. 오늘도 한 걸음." 작은 다짐을 적어두고 가요 ♥
-              </p>
-            </NoteCard>
-          </div>
+            <GuestbookForm />
 
-          <div className="pixel-card-sm p-3">
-            <div className="mb-2 text-[11px] font-bold text-[var(--pink-deep)]">📌 NOTICE</div>
-            <ul className="space-y-1 text-xs">
-              <li>· 5/13 — 새 다이어리 페이지 준비중!</li>
-              <li>· 5/10 — 방명록 한마디 남겨주세요 ♥</li>
-              <li>· 5/03 — 봄맞이 픽셀 룸 새단장 완료</li>
-            </ul>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {entries.map((e, i) => (
+                <GuestbookEntry key={i} {...e} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
