@@ -32,7 +32,7 @@ function Home() {
     <BrowserFrame url="https://ppippi.home/">
       <PixelNav />
 
-      <div className="grid gap-4 md:grid-cols-[280px_1fr]">
+      <div className="grid gap-4 md:grid-cols-[280px_minmax(0,1fr)]">
         {/* Left column */}
         <div className="space-y-4">
           <ProfileCard />
@@ -41,7 +41,7 @@ function Home() {
         </div>
 
         {/* Right column */}
-        <div className="space-y-4">
+        <div className="min-w-0 space-y-4">
           <div className="pixel-card p-4 sm:p-6">
             <div className="mb-4 flex items-end justify-between border-b-2 border-dashed border-[var(--pink-deep)] pb-2">
               <h2 className="text-lg font-bold text-[var(--pink-deep)]">✎ 방명록</h2>
@@ -52,7 +52,7 @@ function Home() {
 
             <GuestbookForm />
 
-            <div className="mt-5 space-y-3">
+            <div className="mt-5 max-h-[430px] space-y-3 overflow-y-auto pr-2">
               {entries.map((e, i) => (
                 <GuestbookEntry key={i} {...e} />
               ))}
