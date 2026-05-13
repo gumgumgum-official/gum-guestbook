@@ -18,12 +18,42 @@ export const Route = createFileRoute("/guestbook")({
 });
 
 const entries = [
-  { name: "또또", date: "2026.05.12", message: "삐삐야~ 오늘도 놀러왔어! 방 너무 귀여워 ♥", rotate: -2 },
-  { name: "민지", date: "2026.05.11", message: "픽셀 음악 너무 좋다… 플레이리스트 공유 가능?", rotate: 1 },
-  { name: "초코", date: "2026.05.10", message: "오늘의 한마디 보고 위로 받고 가요. 고마워요 :)", rotate: -1 },
-  { name: "루루", date: "2026.05.08", message: "교환일기 페이지도 빨리 열어줘~ 기다리는중!", rotate: 2 },
-  { name: "별이", date: "2026.05.06", message: "방 새단장 완전 취향저격! 또 올게요 ★", rotate: -2 },
-  { name: "콩콩", date: "2026.05.02", message: "프로필 그림 너무 귀여움 ㅠㅠ 잘 보고 가요", rotate: 1 },
+  {
+    name: "또또",
+    date: "2026.05.12",
+    message: "삐삐야~ 오늘도 놀러왔어! 방 너무 귀여워 ♥",
+    rotate: -2,
+  },
+  {
+    name: "민지",
+    date: "2026.05.11",
+    message: "픽셀 음악 너무 좋다… 플레이리스트 공유 가능?",
+    rotate: 1,
+  },
+  {
+    name: "초코",
+    date: "2026.05.10",
+    message: "오늘의 한마디 보고 위로 받고 가요. 고마워요 :)",
+    rotate: -1,
+  },
+  {
+    name: "루루",
+    date: "2026.05.08",
+    message: "교환일기 페이지도 빨리 열어줘~ 기다리는중!",
+    rotate: 2,
+  },
+  {
+    name: "별이",
+    date: "2026.05.06",
+    message: "방 새단장 완전 취향저격! 또 올게요 ★",
+    rotate: -2,
+  },
+  {
+    name: "콩콩",
+    date: "2026.05.02",
+    message: "프로필 그림 너무 귀여움 ㅠㅠ 잘 보고 가요",
+    rotate: 1,
+  },
 ];
 
 function Guestbook() {
@@ -51,7 +81,7 @@ function Guestbook() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="max-h-[520px] space-y-4 overflow-y-auto pr-2">
           {entries.map((e, i) => (
             <GuestbookEntry key={i} {...e} />
           ))}
